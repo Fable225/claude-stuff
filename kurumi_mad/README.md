@@ -3,7 +3,7 @@
 BGM：INTERNET YAMERO（Aiobahn feat. KOTOKO）。全片 4:03，1920×1080 / 60fps。
 畫面由 `render.py` 逐格生成（numpy + OpenCV + Pillow），節奏對位直接讀 osu! 譜面的打擊點與 kiai 閃爍標記。
 
-成品：`kurumi_mad.mp4`
+成品：`kurumi_mad.mp4`（約 3 Mbps，為了放進 repo 而壓過；`render.py all` 直接輸出的原始檔約 14 Mbps，未收錄）
 
 ## 構成
 
