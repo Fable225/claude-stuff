@@ -20,6 +20,9 @@
 - 角色立繪 `assets/img/character/main_{kurumi,mochiko,mebuki,yasuko}.png`
 - 主題曲封面 `assets/img/music/jk.jpg`
 - 第 1–7 話場面寫真 `story/img/epNN/NN_{1..6}.jpg`（共 42 張），各話標題與劇情簡介取自 `story/episodes.json`
+- 官方 Logo `assets/img/common/logo.svg`
+- 裝飾素材 `assets/img/common/deco_*.svg`（¥ $ € 符號、星星、視窗按鈕）、對話泡泡 `common/omp/f-{1..6}.png`、K 線底圖 `top/bg_rousoku.png`、角色頭像 `character/thumb_kurumi.png`
+  （SVG 以 Chromium 轉成 PNG 後使用）
 
 ## 泡沫里程表（Wikimedia Commons）
 
@@ -45,7 +48,7 @@
 
 ## 字型（SIL OFL）
 
-Noto Sans TC / Noto Sans JP / Noto Serif TC、Dela Gothic One、DotGothic16、Bebas Neue、JetBrains Mono
+Chiron GoRound TC、Shippori Mincho B1、Mochiy Pop One、Unbounded、Outfit、Rajdhani、DotGothic16、Noto Serif TC（缺字時的後備）
 （經由 npm `@expo-google-fonts/*` 取得）。
 
 ## 片中數字的依據
@@ -58,7 +61,7 @@ Noto Sans TC / Noto Sans JP / Noto Serif TC、Dela Gothic One、DotGothic16、Be
 | 雷曼 158 年 | 1850 年創立，2008-09-15（週一）聲請破產 |
 | 澳幣／日圓 104 → 55 | 2008 年 7 月至 10 月 |
 | 歐元／瑞郎瞬間 −30% | 2015-01-15 瑞士央行取消 1.20 下限，盤中最低約 0.85 |
-| BTC $1,000 → $19,783、−84% | 2017 年初至 12 月高點；2018 年 12 月低點約 $3,200 |
+| BTC $19,783、一年後 −84% | 2017 年 12 月高點；2018 年 12 月低點約 $3,200 |
 | GME $17 → $483 | 2021-01-04 收盤至 01-28 盤中高點（分割前價格） |
 | JPEG 6,930 萬美元 | Beeple《Everydays》2021 年 3 月佳士得拍賣 |
 | LUNA 400 億美元 | 2022 年 5 月崩盤前市值 |
@@ -66,4 +69,15 @@ Noto Sans TC / Noto Sans JP / Noto Serif TC、Dela Gothic One、DotGothic16、Be
 | 9,500 英里鐵路 | 1846 年英國國會通過的鐵路法案總里程 |
 
 「一顆球莖換一棟運河豪宅」與牛頓那句話都是流傳甚廣的說法，後者出處並不可靠。
-くるみ的帳戶餘額、匯率走勢與保證金維持率是為了演出而編的，只有「媽媽賠掉 2000 萬」「爸爸的 300 萬衣櫃存款」「94 圓防線」取自官方劇情簡介。
+
+## 劇情的依據
+
+章節順序與事件取自官網 `story/episodes.json` 的第 1–7 話簡介：媽媽賠掉 2000 萬、第一筆交易套牢後反轉、萌智子推薦澳幣／日圓、超高槓桿、
+爸爸的 300 萬衣櫃存款、94 圓防線、加碼做多、祈禱、含み損歸零、300 萬被發現、FX 引退、「另一個自己」、超級投資對決、
+やす子停損、久留美放空歐元／美元賺 40 萬、芽吹英鎊／美元 100 手全力做多、生活費入金、美元／日圓從 110 圓急墜。
+
+以下是為了演出而編的，不是官方內容：
+- 帳戶餘額、匯率走勢、保證金維持率的具體數字。
+- 強制ロスカット那一段：第 7 話簡介停在「美元／日圓急墜」，沒有寫結果；片中用官網的「強制ロスカット」主視覺當作這一幕。
+- 「2008」這個年份：媽媽賠錢的時間點是我依金融海嘯推定的，官方簡介沒有寫年份。
+- 哪一張場面寫真對應哪一句敘事，是依畫面內容配的，不保證與動畫中的實際場景一致。

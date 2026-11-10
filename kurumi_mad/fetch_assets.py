@@ -2,8 +2,10 @@
 """Download the image assets for the MAD into ./assets (see SOURCES.md).
 
 audio.mp3 and map.osu are not downloaded — put your own copies in ./assets.
-Fonts: `npm i @expo-google-fonts/{noto-sans-tc,noto-sans-jp,noto-serif-tc,dela-gothic-one,dotgothic16,bebas-neue,jetbrains-mono}`
+Fonts: `npm i @expo-google-fonts/{chiron-goround-tc,shippori-mincho-b1,mochiy-pop-one,unbounded,outfit,rajdhani,silkscreen,dotgothic16,noto-serif-tc}`
 and copy the .ttf files named in render.py FONTS into ./assets/fonts.
+The official site's SVG decorations are saved as .svg; rasterise them to .png (same basename) before rendering,
+e.g. with any headless browser or `rsvg-convert -h 900`.
 """
 import hashlib
 import os
@@ -26,6 +28,13 @@ OFFICIAL = {
     "music_jk.jpg": "assets/img/music/jk.jpg",
     **{f"character_main_{c}.png": f"assets/img/character/main_{c}.png" for c in ("kurumi", "mochiko", "mebuki", "yasuko")},
 }
+DECO = [
+    "common/logo.svg", "common/deco_dollar.svg", "common/deco_euro.svg", "common/deco_yen.svg", "common/deco_yen-r.svg",
+    "common/deco_kira.svg", "common/deco_kira-b.svg", "common/deco_kira-g.svg", "common/deco_star-b.svg", "common/deco_star-r.svg",
+    "common/deco_star-y.svg", "common/deco_win-close.svg", "common/deco_win-max.svg", "common/deco_win-min.svg",
+    "common/omp/f-1.png", "common/omp/f-2.png", "common/omp/f-3.png", "common/omp/f-4.png", "common/omp/f-5.png", "common/omp/f-6.png",
+    "top/bg_rousoku.png", "character/thumb_kurumi.png",
+]
 COMMONS = {
     "tulip.jpg": "Semper_Augustus_Tulip_17th_century.jpg",
     "southsea.jpg": "Edward_Matthew_Ward_(1816-1879)_-_The_South_Sea_Bubble,_a_Scene_in_'Change_Alley_in_1720_-_N00432_-_National_Gallery.jpg",
@@ -62,6 +71,8 @@ def get(url, dst, pause=0.0):
 def main():
     for name, path in OFFICIAL.items():
         get(SITE + path, os.path.join(OUT, "kurumi/off", name))
+    for path in DECO:
+        get(SITE + "assets/img/" + path, os.path.join(OUT, "kurumi/deco", path.replace("/", "_")))
     for ep in range(1, 8):
         for i in range(1, 7):
             get(f"{SITE}story/img/ep{ep:02d}/{ep:02d}_{i}.jpg", os.path.join(OUT, "kurumi/ep", f"{ep:02d}_{i}.jpg"))
