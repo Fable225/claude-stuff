@@ -1,9 +1,15 @@
 {
   "fps": 24,
   "segments": [
-    { "id": "boot", "type": "boot", "dur": 3.2 },
     {
-      "id": "disclaimer", "type": "card", "dur": 5.0,
+      "id": "boot",
+      "type": "boot",
+      "dur": 3.2
+    },
+    {
+      "id": "disclaimer",
+      "type": "card",
+      "dur": 5.0,
       "lines": [
         "THE FOLLOWING TAPE IS A WORK OF",
         "FICTION AND PARODY.",
@@ -15,121 +21,443 @@
         "NO SUCH RULES EXIST."
       ]
     },
-    { "id": "title", "type": "title", "dur": 9.5 },
     {
-      "id": "intro", "type": "intro", "fig": "results",
+      "id": "title",
+      "type": "title",
+      "dur": 9.5
+    },
+    {
+      "id": "intro",
+      "type": "intro",
+      "fig": "results",
       "sentences": [
-        { "text": "G'day, and welcome.", "say": "Guh-day, and welcome." },
-        { "text": "If you are watching this tape, your results have been released." },
-        { "text": "One of them was an N.", "say": "One of them was an, en." },
-        { "text": "No worries. Failing a unit is a normal part of uni life." , "say": "No worries. Failing a unit is a normal part of uni life." },
-        { "text": "Here at Monash, we make sure of it.", "twist": true },
-        { "text": "Please follow the rules on this tape. They are for your protection." }
+        {
+          "text": "G'day, and welcome.",
+          "say": "Guh-day, and welcome."
+        },
+        {
+          "text": "If you are watching this tape, your results have been released."
+        },
+        {
+          "text": "One of them was an N.",
+          "say": "One of them was an, en."
+        },
+        {
+          "text": "No worries. Failing a unit is a normal part of uni life.",
+          "say": "No worries. Failing a unit is a normal part of uni life."
+        },
+        {
+          "text": "Here at Monash, we make sure of it.",
+          "twist": true
+        },
+        {
+          "text": "Please follow the rules on this tape. They are for your protection."
+        }
       ]
     },
     {
-      "id": "r1", "type": "rule", "num": 1, "title": "THE EMAIL", "fig": "email",
+      "id": "r1",
+      "type": "rule",
+      "num": 1,
+      "title": "THE EMAIL",
+      "fig": "email",
       "sentences": [
-        { "text": "Results are released at 9:00 am.", "say": "Results are released at nine a.m.." },
-        { "text": "If an email about your result arrives before 9:00 am, do not open it.", "say": "If an email about your result arrives before nine a.m., do not open it." },
-        { "text": "We do not send emails before 9:00 am.", "say": "We do not send emails before nine a.m..", "twist": true }
+        {
+          "text": "Results are released at 9:00 am.",
+          "say": "Results are released at nine a.m.."
+        },
+        {
+          "text": "If an email about your result arrives before 9:00 am, do not open it.",
+          "say": "If an email about your result arrives before nine a.m., do not open it."
+        },
+        {
+          "text": "We do not send emails before 9:00 am.",
+          "say": "We do not send emails before nine a.m..",
+          "twist": true
+        }
       ]
     },
     {
-      "id": "r2", "type": "rule", "num": 2, "title": "THE MARK", "fig": "mark",
+      "id": "r2",
+      "type": "rule",
+      "num": 2,
+      "title": "THE MARK",
+      "fig": "mark",
       "sentences": [
-        { "text": "Your final mark is 49.", "say": "Your final mark is forty-nine." },
-        { "text": "It is always 49.", "say": "It is always forty-nine." },
-        { "text": "Do not ask where the other mark went.", "twist": true },
-        { "text": "It has been put to good use." }
+        {
+          "text": "Your final mark is 49.",
+          "say": "Your final mark is forty-nine."
+        },
+        {
+          "text": "It is always 49.",
+          "say": "It is always forty-nine."
+        },
+        {
+          "text": "Do not ask where the other mark went.",
+          "twist": true
+        },
+        {
+          "text": "It has been put to good use."
+        }
       ]
     },
     {
-      "id": "r3", "type": "rule", "num": 3, "title": "THE PAPER", "fig": "paper",
+      "id": "r3",
+      "type": "rule",
+      "num": 3,
+      "title": "THE PAPER",
+      "fig": "paper",
       "sentences": [
-        { "text": "You may ask to view your exam paper." },
-        { "text": "The handwriting on it should be yours." },
-        { "text": "If it is not, hand it back, say \"no worries\", and leave the room.", "say": "If it is not, hand it back, say, no worries, and leave the room.", "twist": true },
-        { "text": "Do not read what it wrote." }
+        {
+          "text": "You may ask to view your exam paper."
+        },
+        {
+          "text": "The handwriting on it should be yours."
+        },
+        {
+          "text": "If it is not, hand it back, say \"no worries\", and leave the room.",
+          "say": "If it is not, hand it back, say, no worries, and leave the room.",
+          "twist": true
+        },
+        {
+          "text": "Do not read what it wrote."
+        }
       ]
     },
     {
-      "id": "r4", "type": "rule", "num": 4, "title": "THE QUEUE", "fig": "queue",
+      "id": "r4",
+      "type": "rule",
+      "num": 4,
+      "title": "THE QUEUE",
+      "fig": "queue",
       "sentences": [
-        { "text": "You may be offered a supp exam. The fee is payable in person at the service counter.", "say": "You may be offered a supp exam. The fee is payable in person, at the service counter." },
-        { "text": "There is one service window." },
-        { "text": "If you can see a second window, do not join that queue.", "twist": true },
-        { "text": "Nobody in that queue is enrolled." }
+        {
+          "text": "You may be offered a supp exam. The fee is payable in person at the service counter.",
+          "say": "You may be offered a supp exam. The fee is payable in person, at the service counter."
+        },
+        {
+          "text": "There is one service window."
+        },
+        {
+          "text": "If you can see a second window, do not join that queue.",
+          "twist": true
+        },
+        {
+          "text": "Nobody in that queue is enrolled."
+        }
       ]
     },
     {
-      "id": "r5", "type": "rule", "num": 5, "title": "THE LIFT", "fig": "lift",
+      "id": "r5",
+      "type": "rule",
+      "num": 5,
+      "title": "THE LIFT",
+      "fig": "lift",
       "sentences": [
-        { "text": "Your supp exam will be held in the Menzies Building." },
-        { "text": "The Menzies Building has eleven floors." },
-        { "text": "If the lift shows a button for a twelfth, do not press it.", "twist": true },
-        { "text": "You have not studied for that floor." }
+        {
+          "text": "Your supp exam will be held in the Menzies Building."
+        },
+        {
+          "text": "The Menzies Building has eleven floors."
+        },
+        {
+          "text": "If the lift shows a button for a twelfth, do not press it.",
+          "twist": true
+        },
+        {
+          "text": "You have not studied for that floor."
+        }
       ]
     },
     {
-      "id": "r6", "type": "rule", "num": 6, "title": "THE INVIGILATORS", "fig": "invig",
+      "id": "r6",
+      "type": "rule",
+      "num": 6,
+      "title": "THE INVIGILATORS",
+      "fig": "invig",
       "sentences": [
-        { "text": "There are three invigilators in the exam room." },
-        { "text": "Count them at the start. Count them again during reading time." },
-        { "text": "If there are four, keep your eyes on your own paper.", "twist": true },
-        { "text": "The fourth is not looking for cheating." }
+        {
+          "text": "There are three invigilators in the exam room."
+        },
+        {
+          "text": "Count them at the start. Count them again during reading time."
+        },
+        {
+          "text": "If there are four, keep your eyes on your own paper.",
+          "twist": true
+        },
+        {
+          "text": "The fourth is not looking for cheating."
+        }
       ]
     },
     {
-      "id": "r7", "type": "rule", "num": 7, "title": "THE REPEAT", "fig": "repeat",
+      "id": "r7",
+      "type": "rule",
+      "num": 7,
+      "title": "THE REPEAT",
+      "fig": "repeat",
       "sentences": [
-        { "text": "If you fail the supp, you must repeat the unit." },
-        { "text": "Enrol in WES before the census date.", "say": "Enrol in wez, before the census date." },
-        { "text": "Fees are charged for every attempt." },
-        { "text": "There is no limit on attempts. We checked.", "twist": true }
+        {
+          "text": "If you fail the supp, you must repeat the unit."
+        },
+        {
+          "text": "Enrol in WES before the census date.",
+          "say": "Enrol in wez, before the census date."
+        },
+        {
+          "text": "Fees are charged for every attempt."
+        },
+        {
+          "text": "There is no limit on attempts. We checked.",
+          "twist": true
+        }
       ]
     },
     {
-      "id": "r8", "type": "rule", "num": 8, "title": "THE NEW BUILDING", "fig": "building",
+      "id": "r8pay",
+      "type": "rule",
+      "num": 8,
+      "title": "THE PAYMENT",
+      "fig": "pay",
       "sentences": [
-        { "text": "You may notice a new building on campus." },
-        { "text": "It was not there last semester." },
-        { "text": "Do not look for your name on the donor wall.", "twist": true },
-        { "text": "If you find it, do not count how many times it appears." }
+        {
+          "text": "We accept card, EFTPOS, BPAY and PayID. A surcharge applies.",
+          "say": "We accept card, eft-poss, bee-pay, and pay eye dee. A surcharge applies."
+        },
+        {
+          "text": "We do not accept cash."
+        },
+        {
+          "text": "If the terminal offers an account you do not recognise, press cancel.",
+          "twist": true
+        },
+        {
+          "text": "If it says \"approved\" anyway, do not ask what you paid with.",
+          "say": "If it says approved anyway, do not ask what you paid with."
+        }
       ]
     },
     {
-      "id": "r9", "type": "rule", "num": 9, "title": "THE BUS", "fig": "bus",
+      "id": "r8",
+      "type": "rule",
+      "num": 9,
+      "title": "THE NEW BUILDING",
+      "fig": "building",
       "sentences": [
-        { "text": "The 601 leaves the Clayton bus loop for Huntingdale every few minutes.", "say": "The six oh one leaves the Clayton bus loop, for Huntingdale, every few minutes." },
-        { "text": "If a bus arrives showing route 49, it is not a bus.", "say": "If a bus arrives showing route forty-nine, it is not a bus.", "twist": true },
-        { "text": "Do not touch on." }
+        {
+          "text": "You may notice a new building on campus."
+        },
+        {
+          "text": "It was not there last semester."
+        },
+        {
+          "text": "Do not look for your name on the donor wall.",
+          "twist": true
+        },
+        {
+          "text": "If you find it, do not count how many times it appears."
+        }
       ]
     },
     {
-      "id": "r10", "type": "rule", "num": 10, "title": "THE MATE", "fig": "mate",
+      "id": "r9",
+      "type": "rule",
+      "num": 10,
+      "title": "THE BUS",
+      "fig": "bus",
       "sentences": [
-        { "text": "A pass grade does exist. Some students have seen one." },
-        { "text": "If a mate reckons they passed this unit, ask who their lecturer was." },
-        { "text": "If they cannot remember the lecturer's face, they are not your mate anymore.", "twist": true },
-        { "text": "They are staff." }
+        {
+          "text": "The 601 leaves the Clayton bus loop for Huntingdale every few minutes.",
+          "say": "The six oh one leaves the Clayton bus loop, for Huntingdale, every few minutes."
+        },
+        {
+          "text": "If a bus arrives showing route 49, it is not a bus.",
+          "say": "If a bus arrives showing route forty-nine, it is not a bus.",
+          "twist": true
+        },
+        {
+          "text": "Do not touch on."
+        }
       ]
     },
     {
-      "id": "outro", "type": "outro",
+      "id": "r10",
+      "type": "rule",
+      "num": 11,
+      "title": "THE MATE",
+      "fig": "mate",
       "sentences": [
-        { "text": "If you have followed every rule, you will be allowed to attempt the unit again." },
-        { "text": "And again.", "twist": true },
-        { "text": "And again." },
-        { "text": "Monash thanks you for your continued enrolment." },
-        { "text": "Ancora imparo. I am still learning.", "say": "Ancora imparo. I am still learning." },
-        { "text": "See you next semester.", "slowdown": true }
+        {
+          "text": "A pass grade does exist. Some students have seen one."
+        },
+        {
+          "text": "If a mate reckons they passed this unit, ask who their lecturer was."
+        },
+        {
+          "text": "If they cannot remember the lecturer's face, they are not your mate anymore.",
+          "twist": true
+        },
+        {
+          "text": "They are staff."
+        }
       ]
     },
-    { "id": "end", "type": "end", "dur": 6.5 },
-    { "id": "stop", "type": "stop", "dur": 3.0 },
     {
-      "id": "credits", "type": "card", "dur": 8.0,
+      "id": "my",
+      "type": "section",
+      "title": "SUPPLEMENT M",
+      "sub": "MALAYSIA CAMPUS  /  TAMBAHAN: KAMPUS MALAYSIA",
+      "sentences": [
+        {
+          "text": "The following rules apply only to students at the Malaysia campus."
+        },
+        {
+          "text": "All other students must look away now."
+        },
+        {
+          "text": "We will know.",
+          "twist": true
+        }
+      ]
+    },
+    {
+      "id": "m1",
+      "type": "rule",
+      "group": "M",
+      "num": 1,
+      "title": "THE CANOPY WALK",
+      "fig": "canopy",
+      "sentences": [
+        {
+          "text": "The canopy walk runs from the campus to Sunway Pyramid."
+        },
+        {
+          "text": "The walk takes about ten minutes."
+        },
+        {
+          "text": "If you have been walking for longer than ten minutes, do not look behind you.",
+          "twist": true
+        },
+        {
+          "text": "The campus has been following."
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "type": "rule",
+      "group": "M",
+      "num": 2,
+      "title": "THE MAMAK",
+      "fig": "mamak",
+      "sentences": [
+        {
+          "text": "The mamak near campus is open 24 hours. You may study there.",
+          "say": "The mah-mahk near campus is open twenty-four hours. You may study there."
+        },
+        {
+          "text": "Order what you like."
+        },
+        {
+          "text": "If a teh tarik arrives that you did not order, do not drink it.",
+          "say": "If a tay tah-rik arrives that you did not order, do not drink it.",
+          "twist": true
+        },
+        {
+          "text": "It has already been added to your fees."
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "type": "rule",
+      "group": "M",
+      "num": 3,
+      "title": "THE QR CODE",
+      "fig": "qr",
+      "sentences": [
+        {
+          "text": "At the Malaysia campus, repeat fees are payable in ringgit.",
+          "say": "At the Malaysia campus, repeat fees are payable in ring git."
+        },
+        {
+          "text": "We accept FPX, JomPAY and DuitNow QR. Scan the code at the counter.",
+          "say": "We accept F P X, jom pay, and doo-it now Q R. Scan the code at the counter."
+        },
+        {
+          "text": "If the code scans you first, stand still.",
+          "twist": true
+        },
+        {
+          "text": "The payment has gone through."
+        }
+      ]
+    },
+    {
+      "id": "m4",
+      "type": "rule",
+      "group": "M",
+      "num": 4,
+      "title": "THE TIME DIFFERENCE",
+      "fig": "time",
+      "sentences": [
+        {
+          "text": "Melbourne is ahead of you. It always is."
+        },
+        {
+          "text": "Your result has already happened there."
+        },
+        {
+          "text": "If you ring the Clayton campus and your own voice answers, hang up.",
+          "twist": true
+        },
+        {
+          "text": "It failed first."
+        }
+      ]
+    },
+    {
+      "id": "outro",
+      "type": "outro",
+      "sentences": [
+        {
+          "text": "If you have followed every rule, you will be allowed to attempt the unit again."
+        },
+        {
+          "text": "And again.",
+          "twist": true
+        },
+        {
+          "text": "And again."
+        },
+        {
+          "text": "Monash thanks you for your continued enrolment."
+        },
+        {
+          "text": "Ancora imparo. I am still learning.",
+          "say": "Ancora imparo. I am still learning."
+        },
+        {
+          "text": "See you next semester.",
+          "slowdown": true
+        }
+      ]
+    },
+    {
+      "id": "end",
+      "type": "end",
+      "dur": 6.5
+    },
+    {
+      "id": "stop",
+      "type": "stop",
+      "dur": 3.0
+    },
+    {
+      "id": "credits",
+      "type": "card",
+      "dur": 8.0,
       "lines": [
         "END OF TAPE.",
         "",

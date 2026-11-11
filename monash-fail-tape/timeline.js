@@ -1,6 +1,6 @@
 window.TIMELINE = {
  "fps": 24,
- "duration": 262.832,
+ "duration": 376.925,
  "segments": [
   {
    "id": "boot",
@@ -323,163 +323,376 @@ window.TIMELINE = {
    "end": 167.983
   },
   {
-   "id": "r8",
+   "id": "r8pay",
    "type": "rule",
    "num": 8,
+   "title": "THE PAYMENT",
+   "fig": "pay",
+   "start": 167.983,
+   "twistAt": 178.939,
+   "sentences": [
+    {
+     "text": "We accept card, EFTPOS, BPAY and PayID. A surcharge applies.",
+     "start": 169.613,
+     "end": 176.022,
+     "twist": false
+    },
+    {
+     "text": "We do not accept cash.",
+     "start": 176.402,
+     "end": 178.089,
+     "twist": false
+    },
+    {
+     "text": "If the terminal offers an account you do not recognise, press cancel.",
+     "start": 178.939,
+     "end": 184.355,
+     "twist": true
+    },
+    {
+     "text": "If it says \"approved\" anyway, do not ask what you paid with.",
+     "start": 184.735,
+     "end": 189.4,
+     "twist": false
+    }
+   ],
+   "end": 190.9
+  },
+  {
+   "id": "r8",
+   "type": "rule",
+   "num": 9,
    "title": "THE NEW BUILDING",
    "fig": "building",
-   "start": 167.983,
-   "twistAt": 176.022,
+   "start": 190.9,
+   "twistAt": 198.94,
    "sentences": [
     {
      "text": "You may notice a new building on campus.",
-     "start": 169.613,
-     "end": 172.651,
+     "start": 192.53,
+     "end": 195.568,
      "twist": false
     },
     {
      "text": "It was not there last semester.",
-     "start": 173.031,
-     "end": 175.172,
+     "start": 195.948,
+     "end": 198.09,
      "twist": false
     },
     {
      "text": "Do not look for your name on the donor wall.",
-     "start": 176.022,
-     "end": 179.221,
+     "start": 198.94,
+     "end": 202.138,
      "twist": true
     },
     {
      "text": "If you find it, do not count how many times it appears.",
-     "start": 179.601,
-     "end": 184.536,
+     "start": 202.518,
+     "end": 207.453,
      "twist": false
     }
    ],
-   "end": 186.036
+   "end": 208.953
   },
   {
    "id": "r9",
    "type": "rule",
-   "num": 9,
+   "num": 10,
    "title": "THE BUS",
    "fig": "bus",
-   "start": 186.036,
-   "twistAt": 194.736,
+   "start": 208.953,
+   "twistAt": 217.653,
    "sentences": [
     {
      "text": "The 601 leaves the Clayton bus loop for Huntingdale every few minutes.",
-     "start": 187.666,
-     "end": 193.886,
+     "start": 210.583,
+     "end": 216.803,
      "twist": false
     },
     {
      "text": "If a bus arrives showing route 49, it is not a bus.",
-     "start": 194.736,
-     "end": 199.681,
+     "start": 217.653,
+     "end": 222.598,
      "twist": true
     },
     {
      "text": "Do not touch on.",
-     "start": 200.061,
-     "end": 201.364,
+     "start": 222.978,
+     "end": 224.281,
      "twist": false
     }
    ],
-   "end": 202.864
+   "end": 225.781
   },
   {
    "id": "r10",
    "type": "rule",
-   "num": 10,
+   "num": 11,
    "title": "THE MATE",
    "fig": "mate",
-   "start": 202.864,
-   "twistAt": 214.996,
+   "start": 225.781,
+   "twistAt": 237.913,
    "sentences": [
     {
      "text": "A pass grade does exist. Some students have seen one.",
-     "start": 204.494,
-     "end": 208.888,
+     "start": 227.411,
+     "end": 231.805,
      "twist": false
     },
     {
      "text": "If a mate reckons they passed this unit, ask who their lecturer was.",
-     "start": 209.268,
-     "end": 214.146,
+     "start": 232.185,
+     "end": 237.063,
      "twist": false
     },
     {
      "text": "If they cannot remember the lecturer's face, they are not your mate anymore.",
-     "start": 214.996,
-     "end": 220.763,
+     "start": 237.913,
+     "end": 243.68,
      "twist": true
     },
     {
      "text": "They are staff.",
-     "start": 221.143,
-     "end": 222.222,
+     "start": 244.06,
+     "end": 245.139,
      "twist": false
     }
    ],
-   "end": 223.722
+   "end": 246.639
+  },
+  {
+   "id": "my",
+   "type": "section",
+   "title": "SUPPLEMENT M",
+   "sub": "MALAYSIA CAMPUS  /  TAMBAHAN: KAMPUS MALAYSIA",
+   "start": 246.639,
+   "twistAt": 256.831,
+   "sentences": [
+    {
+     "text": "The following rules apply only to students at the Malaysia campus.",
+     "start": 247.819,
+     "end": 252.662,
+     "twist": false
+    },
+    {
+     "text": "All other students must look away now.",
+     "start": 253.042,
+     "end": 255.981,
+     "twist": false
+    },
+    {
+     "text": "We will know.",
+     "start": 256.831,
+     "end": 257.831,
+     "twist": true
+    }
+   ],
+   "end": 259.331
+  },
+  {
+   "id": "m1",
+   "type": "rule",
+   "group": "M",
+   "num": 1,
+   "title": "THE CANOPY WALK",
+   "fig": "canopy",
+   "start": 259.331,
+   "twistAt": 268.663,
+   "sentences": [
+    {
+     "text": "The canopy walk runs from the campus to Sunway Pyramid.",
+     "start": 260.961,
+     "end": 264.923,
+     "twist": false
+    },
+    {
+     "text": "The walk takes about ten minutes.",
+     "start": 265.303,
+     "end": 267.813,
+     "twist": false
+    },
+    {
+     "text": "If you have been walking for longer than ten minutes, do not look behind you.",
+     "start": 268.663,
+     "end": 274.589,
+     "twist": true
+    },
+    {
+     "text": "The campus has been following.",
+     "start": 274.969,
+     "end": 277.329,
+     "twist": false
+    }
+   ],
+   "end": 278.829
+  },
+  {
+   "id": "m2",
+   "type": "rule",
+   "group": "M",
+   "num": 2,
+   "title": "THE MAMAK",
+   "fig": "mamak",
+   "start": 278.829,
+   "twistAt": 288.637,
+   "sentences": [
+    {
+     "text": "The mamak near campus is open 24 hours. You may study there.",
+     "start": 280.459,
+     "end": 286.088,
+     "twist": false
+    },
+    {
+     "text": "Order what you like.",
+     "start": 286.468,
+     "end": 287.787,
+     "twist": false
+    },
+    {
+     "text": "If a teh tarik arrives that you did not order, do not drink it.",
+     "start": 288.637,
+     "end": 293.636,
+     "twist": true
+    },
+    {
+     "text": "It has already been added to your fees.",
+     "start": 294.016,
+     "end": 297.03,
+     "twist": false
+    }
+   ],
+   "end": 298.53
+  },
+  {
+   "id": "m3",
+   "type": "rule",
+   "group": "M",
+   "num": 3,
+   "title": "THE QR CODE",
+   "fig": "qr",
+   "start": 298.53,
+   "twistAt": 312.729,
+   "sentences": [
+    {
+     "text": "At the Malaysia campus, repeat fees are payable in ringgit.",
+     "start": 300.16,
+     "end": 304.618,
+     "twist": false
+    },
+    {
+     "text": "We accept FPX, JomPAY and DuitNow QR. Scan the code at the counter.",
+     "start": 304.998,
+     "end": 311.879,
+     "twist": false
+    },
+    {
+     "text": "If the code scans you first, stand still.",
+     "start": 312.729,
+     "end": 316.376,
+     "twist": true
+    },
+    {
+     "text": "The payment has gone through.",
+     "start": 316.756,
+     "end": 318.685,
+     "twist": false
+    }
+   ],
+   "end": 320.185
+  },
+  {
+   "id": "m4",
+   "type": "rule",
+   "group": "M",
+   "num": 4,
+   "title": "THE TIME DIFFERENCE",
+   "fig": "time",
+   "start": 320.185,
+   "twistAt": 328.746,
+   "sentences": [
+    {
+     "text": "Melbourne is ahead of you. It always is.",
+     "start": 321.815,
+     "end": 324.946,
+     "twist": false
+    },
+    {
+     "text": "Your result has already happened there.",
+     "start": 325.326,
+     "end": 327.896,
+     "twist": false
+    },
+    {
+     "text": "If you ring the Clayton campus and your own voice answers, hang up.",
+     "start": 328.746,
+     "end": 334.562,
+     "twist": true
+    },
+    {
+     "text": "It failed first.",
+     "start": 334.942,
+     "end": 336.315,
+     "twist": false
+    }
+   ],
+   "end": 337.815
   },
   {
    "id": "outro",
    "type": "outro",
-   "start": 223.722,
-   "twistAt": 231.201,
+   "start": 337.815,
+   "twistAt": 345.295,
    "sentences": [
     {
      "text": "If you have followed every rule, you will be allowed to attempt the unit again.",
-     "start": 224.902,
-     "end": 230.351,
+     "start": 338.995,
+     "end": 344.445,
      "twist": false
     },
     {
      "text": "And again.",
-     "start": 231.201,
-     "end": 232.052,
+     "start": 345.295,
+     "end": 346.145,
      "twist": true
     },
     {
      "text": "And again.",
-     "start": 232.432,
-     "end": 233.282,
+     "start": 346.525,
+     "end": 347.376,
      "twist": false
     },
     {
      "text": "Monash thanks you for your continued enrolment.",
-     "start": 233.662,
-     "end": 237.347,
+     "start": 347.756,
+     "end": 351.44,
      "twist": false
     },
     {
      "text": "Ancora imparo. I am still learning.",
-     "start": 237.727,
-     "end": 240.876,
+     "start": 351.82,
+     "end": 354.97,
      "twist": false
     },
     {
      "text": "See you next semester.",
-     "start": 241.256,
-     "end": 243.832,
+     "start": 355.35,
+     "end": 357.925,
      "twist": false
     }
    ],
-   "end": 245.332
+   "end": 359.425
   },
   {
    "id": "end",
    "type": "end",
-   "start": 245.332,
-   "end": 251.832
+   "start": 359.425,
+   "end": 365.925
   },
   {
    "id": "stop",
    "type": "stop",
-   "start": 251.832,
-   "end": 254.832
+   "start": 365.925,
+   "end": 368.925
   },
   {
    "id": "credits",
@@ -497,8 +710,8 @@ window.TIMELINE = {
     "",
     "(PROBABLY.)"
    ],
-   "start": 254.832,
-   "end": 262.832
+   "start": 368.925,
+   "end": 376.925
   }
  ],
  "events": [
@@ -641,85 +854,175 @@ window.TIMELINE = {
    "dur": 0.32
   },
   {
-   "t": 175.902,
+   "t": 178.819,
    "kind": "glitch",
    "strength": 1.0,
    "dur": 0.55
   },
   {
-   "t": 176.322,
+   "t": 179.239,
+   "kind": "flash",
+   "text": "APPROVED",
+   "dur": 0.13
+  },
+  {
+   "t": 190.9,
+   "kind": "glitch",
+   "strength": 0.6,
+   "dur": 0.32
+  },
+  {
+   "t": 198.82,
+   "kind": "glitch",
+   "strength": 1.0,
+   "dur": 0.55
+  },
+  {
+   "t": 199.24,
    "kind": "flash",
    "text": "THANK YOU FOR YOUR CONTRIBUTION",
    "dur": 0.13
   },
   {
-   "t": 186.036,
+   "t": 208.953,
    "kind": "glitch",
    "strength": 0.6,
    "dur": 0.32
   },
   {
-   "t": 194.616,
+   "t": 217.533,
    "kind": "glitch",
    "strength": 1.0,
    "dur": 0.55
   },
   {
-   "t": 202.864,
+   "t": 225.781,
    "kind": "glitch",
    "strength": 0.6,
    "dur": 0.32
   },
   {
-   "t": 214.876,
+   "t": 237.793,
    "kind": "glitch",
    "strength": 1.0,
    "dur": 0.55
   },
   {
-   "t": 223.722,
+   "t": 246.639,
    "kind": "glitch",
    "strength": 0.6,
    "dur": 0.32
   },
   {
-   "t": 231.081,
+   "t": 256.711,
    "kind": "glitch",
    "strength": 1.0,
    "dur": 0.55
   },
   {
-   "t": 231.501,
+   "t": 257.131,
+   "kind": "flash",
+   "text": "WE WILL KNOW",
+   "dur": 0.13
+  },
+  {
+   "t": 259.331,
+   "kind": "glitch",
+   "strength": 0.6,
+   "dur": 0.32
+  },
+  {
+   "t": 268.543,
+   "kind": "glitch",
+   "strength": 1.0,
+   "dur": 0.55
+  },
+  {
+   "t": 268.963,
+   "kind": "flash",
+   "text": "DO NOT LOOK BEHIND YOU",
+   "dur": 0.13
+  },
+  {
+   "t": 278.829,
+   "kind": "glitch",
+   "strength": 0.6,
+   "dur": 0.32
+  },
+  {
+   "t": 288.517,
+   "kind": "glitch",
+   "strength": 1.0,
+   "dur": 0.55
+  },
+  {
+   "t": 298.53,
+   "kind": "glitch",
+   "strength": 0.6,
+   "dur": 0.32
+  },
+  {
+   "t": 312.609,
+   "kind": "glitch",
+   "strength": 1.0,
+   "dur": 0.55
+  },
+  {
+   "t": 320.185,
+   "kind": "glitch",
+   "strength": 0.6,
+   "dur": 0.32
+  },
+  {
+   "t": 328.626,
+   "kind": "glitch",
+   "strength": 1.0,
+   "dur": 0.55
+  },
+  {
+   "t": 337.815,
+   "kind": "glitch",
+   "strength": 0.6,
+   "dur": 0.32
+  },
+  {
+   "t": 345.175,
+   "kind": "glitch",
+   "strength": 1.0,
+   "dur": 0.55
+  },
+  {
+   "t": 345.595,
    "kind": "flash",
    "text": "AGAIN",
    "dur": 0.13
   },
   {
-   "t": 245.332,
+   "t": 359.425,
    "kind": "glitch",
    "strength": 0.6,
    "dur": 0.32
   },
   {
-   "t": 247.932,
+   "t": 362.025,
    "kind": "glitch",
    "strength": 1.0,
    "dur": 0.6
   },
   {
-   "t": 249.732,
+   "t": 363.825,
    "kind": "glitch",
    "strength": 1.0,
    "dur": 0.9
   },
   {
-   "t": 251.832,
+   "t": 365.925,
    "kind": "glitch",
    "strength": 0.6,
    "dur": 0.32
   },
   {
-   "t": 254.832,
+   "t": 368.925,
    "kind": "glitch",
    "strength": 0.6,
    "dur": 0.32

@@ -10,8 +10,9 @@ tape claims about marks, fees and buildings are made up for the joke.
 
 There are two cuts:
 
-- `so-youve-failed-a-unit.mp4` — the VHS cut. A worn training tape with 10 rules
-  (960×720, 24 fps, about 4 min 20 s).
+- `so-youve-failed-a-unit.mp4` — the VHS cut. A worn training tape with 11 general
+  rules, then "Supplement M": four more that apply only at the Malaysia campus
+  (960×720, 24 fps, about 6 min 20 s).
 - `so-youve-failed-a-unit-modern.mp4` — the modern cut. A clean "compulsory online
   module" that drops into dark mode whenever a rule turns, with 11 rules, including
   one on accepted payment methods (1920×1080, 30 fps, about 4 min 10 s).
@@ -61,7 +62,8 @@ Opening `video.html` or `modern.html` in a browser plays a silent live preview.
 
 To change a cut, edit its script and run both steps again. `text` is what appears on
 screen, `say` (optional) is what the voice reads, `"twist": true` marks the sentence
-where a rule goes wrong, and `notify` (modern cut) pops a notification banner.
+where a rule goes wrong, and `notify` (modern cut) pops a notification banner. In the
+VHS script, `"group": "M"` puts a rule in the Malaysia supplement (numbered M1, M2, …).
 
 ## Credits
 

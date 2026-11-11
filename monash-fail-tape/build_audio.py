@@ -19,6 +19,9 @@ FLASHES = {
     "r2": "IT IS ALWAYS 49",
     "r6": "DO NOT LOOK UP",
     "r8": "THANK YOU FOR YOUR CONTRIBUTION",
+    "r8pay": "APPROVED",
+    "my": "WE WILL KNOW",
+    "m1": "DO NOT LOOK BEHIND YOU",
     "outro": "AGAIN",
 }
 

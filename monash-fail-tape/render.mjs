@@ -15,7 +15,7 @@ const args = process.argv.slice(2);
 const V = args[0] === 'modern'
   ? { html: 'modern.html', audio: 'audio-modern.wav', out: 'so-youve-failed-a-unit-modern.mp4', size: [1920, 1080], vf: 'null', crf: '21' }
   // VHS: light denoise first, raw tape grain costs ~8 Mbit/s otherwise
-  : { html: 'video.html', audio: 'audio.wav', out: 'so-youve-failed-a-unit.mp4', size: [960, 720], vf: 'hqdn3d=3:3:8:8', crf: '30' };
+  : { html: 'video.html', audio: 'audio.wav', out: 'so-youve-failed-a-unit.mp4', size: [960, 720], vf: 'hqdn3d=3:3:8:8', crf: '31' };
 if (args[0] === 'modern') args.shift();
 const url = pathToFileURL(path.join(here, V.html)).href + '?render';
 const WORKERS = 4;

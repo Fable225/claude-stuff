@@ -11,6 +11,7 @@ const g = scene.getContext('2d');
 g.textRendering = 'optimizeSpeed';   // no ligatures: this is meant to be a character generator
 const C = { bg: '#070a2e', fg: '#dcdccf', amb: '#f0c93a', red: '#e8301f', pale: '#ff9a84',
             dim: '#7480c4', ink: '#b9c4e8', dark: '#02041a', paper: '#c9cbbd' };
+const MYBG = '#062a24';
 const F = px => `${px}px VT, monospace`;
 const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
 const ease = x => { x = clamp(x); return x * x * (3 - 2 * x); };
@@ -245,6 +246,138 @@ const FIG = {
     g.restore();
     if (st.s >= 2) txt('DO NOT TOUCH ON', FW / 2, 300, 22, C.red, 'center');
   },
+  pay(st) {
+    const on = st.tw > 0, appr = st.s >= 3 && st.sp > 1.2, lcd = on ? C.red : '#7ddc8a';
+    txt('EFTPOS', 12, 6, 18, C.dim);
+    R(52, 28, 160, 294, '#1a1e4a'); box(52, 28, 160, 294, C.dim);
+    R(64, 40, 136, 98, '#04120a'); box(64, 40, 136, 98, C.dim);
+    if (!appr) {
+      txt('SUPP EXAM FEE', 70, 44, 18, lcd);
+      txt(st.s >= 1 ? 'NO CASH' : '+ SURCHARGE', 70, 62, 18, lcd);
+      txt('SELECT ACCOUNT', 70, 86, 18, lcd);
+      txt('CHQ SAV CR', 70, 108, 22, lcd);
+      if (on && (st.f >> 2) % 2) txt('YOU', 166, 108, 22, '#fff');
+    } else {
+      txt('APPROVED', 132, 44, 34, C.red, 'center');
+      txt('PAID WITH:', 70, 86, 18, C.red); R(70, 108, 124, 18, C.red);
+    }
+    ['CHQ', 'SAV', 'CR', ''].forEach((k, i) => {
+      const hot = i === 3 && on;
+      R(64 + i * 35, 148, 31, 18, hot ? ((st.f >> 2) % 2 ? C.red : '#5a0d08') : '#0a0d30'); box(64 + i * 35, 148, 31, 18, hot ? C.red : C.ink);
+      txt(k, 64 + i * 35 + 15, 149, 16, C.ink, 'center');
+    });
+    [[1, 2, 3], [4, 5, 6], [7, 8, 9], ['X', 0, 'OK']].forEach((row, r) => row.forEach((k, c) => {
+      const x = 68 + c * 44, y = 180 + r * 32, dead = k === 'X' && st.tw > 1.2;
+      R(x, y, 38, 24, k === 'X' ? (dead ? '#1a1a22' : '#7a120b') : k === 'OK' ? '#12502a' : '#0a0d30'); box(x, y, 38, 24, dead ? '#33364a' : C.ink);
+      txt(String(k), x + 19, y + 2, 20, dead ? '#33364a' : C.fg, 'center');
+    }));
+    if (st.tw > 1.2) txt('CANCEL: NO RESPONSE', 132, 304, 16, C.red, 'center');
+  },
+  canopy(st) {
+    const on = st.tw > 0, vx = 132, vy = 150;
+    R(0, 0, FW, FH, '#04061c');
+    g.strokeStyle = C.dim; g.lineWidth = 1;
+    [[0, 20], [FW, 20], [0, FH], [FW, FH]].forEach(([x, y]) => { g.beginPath(); g.moveTo(x, y); g.lineTo(vx, vy); g.stroke(); });
+    const ph = (st.t * 0.45) % 1;                           // you keep walking
+    for (let k = 9; k >= 0; k--) {
+      const z = k + 1 - ph, sc = 1 / (1 + z * 0.55), dark = on && k > 8 - st.tw * 1.3;
+      box(vx - 132 * sc, vy - 130 * sc, 264 * sc, 310 * sc, dark ? '#2a2f66' : C.ink);
+      if (!dark) R(vx - 3 * sc - 1, vy - 130 * sc + 2, 6 * sc + 2, 3 * sc + 1, C.amb);
+    }
+    const exit = on ? Math.max(0, 1 - st.tw / 2.5) : 1;      // the far end stops getting closer, then goes
+    if (exit > 0) { R(vx - 9 * exit, vy - 12 * exit, 18 * exit, 26 * exit, C.amb); if (!on) txt('PYRAMID', vx, vy - 34, 16, C.amb, 'center'); }
+    const secs = Math.floor(on ? 600 + st.tw * 6 + st.tw * st.tw * 55 : Math.min(599, 412 + st.t * 14));
+    R(0, 0, FW, 26, '#04061c');
+    txt('WALKED  ' + String(Math.floor(secs / 60)).padStart(2, '0') + ':' + String(secs % 60).padStart(2, '0'), 12, 4, 22, on ? C.red : C.amb);
+    if (st.s >= 3) {                                        // something large comes up behind you
+      const h = Math.min(96, st.sp * 34);
+      R(0, FH - h, FW, h, '#000');
+      for (let i = 0; i < 6; i++) { R(i * 44, FH - h - 10 - (i % 2) * 8, 40, 12 + (i % 2) * 8, '#000'); if (h > 30) R(i * 44 + 14, FH - h + 8, 8, 8, hash(i, st.f >> 3) < 0.7 ? C.red : '#3a0805'); }
+      txt('BEHIND YOU: CAMPUS', FW / 2, FH - 24, 20, C.red, 'center');
+    }
+  },
+  mamak(st) {
+    const on = st.tw > 0;
+    R(0, 0, FW, 30, '#0b0f3a'); txt('RESTORAN  -  BUKA 24 JAM', FW / 2, 5, 20, C.amb, 'center');
+    txt(on ? '02:49 AM' : '02:4' + (Math.floor(st.t / 3) % 9) + ' AM', 12, 36, 18, on ? C.red : C.dim); txt('OPEN', FW - 12, 36, 18, C.dim, 'right');
+    R(0, 232, FW, 3, C.dim);
+    g.fillStyle = C.ink; g.beginPath(); g.ellipse(58, 224, 42, 9, 0, 0, 7); g.fill();
+    g.fillStyle = '#c9a25a'; g.beginPath(); g.ellipse(58, 221, 28, 6, 0, 0, 7); g.fill();
+    R(176, 206, 72, 26, '#3a4270'); R(180, 200, 64, 8, C.ink); txt('NOTES', 212, 208, 16, C.ink, 'center');
+    if (on) {                                               // nobody ordered this
+      const a = ease(st.tw / 1.2), left = st.s >= 3 ? Math.max(0.08, 1 - st.sp / 4.5) : 1, top = 150, bot = 230;
+      g.globalAlpha = a;
+      g.fillStyle = '#2a3066'; g.beginPath(); g.moveTo(108, top); g.lineTo(156, top); g.lineTo(150, bot); g.lineTo(114, bot); g.closePath(); g.fill();
+      const ty = bot - (bot - top - 10) * left;
+      g.fillStyle = '#b8743a'; g.beginPath(); g.moveTo(109 + (ty - top) * 0.07, ty); g.lineTo(155 - (ty - top) * 0.07, ty); g.lineTo(150, bot); g.lineTo(114, bot); g.closePath(); g.fill();
+      R(110 + (ty - top) * 0.07, ty - 9, 44 - (ty - top) * 0.14, 9, '#f0e6d0');
+      g.strokeStyle = C.red; g.lineWidth = 1; g.beginPath(); g.moveTo(108, top); g.lineTo(156, top); g.lineTo(150, bot); g.lineTo(114, bot); g.closePath(); g.stroke();
+      g.strokeStyle = C.ink; g.lineWidth = 1.5;
+      for (let i = 0; i < 3; i++) { g.beginPath(); for (let y = 0; y < 44; y += 4) g.lineTo(120 + i * 12 + Math.sin(y * 0.3 + st.t * 3 + i) * 3, top - 8 - y); g.stroke(); }
+      g.globalAlpha = 1;
+      if (st.s >= 3) txt('IT IS BEING DRUNK', FW / 2, 124 - 80, 18, C.red, 'center');
+    }
+    R(18, 244, 228, 80, C.paper);
+    txt('TABLE 49', 26, 246, 18, '#1a1a2a'); txt('BIL', 238, 246, 18, '#1a1a2a', 'right');
+    txt('ROTI CANAI      x1', 26, 264, 18, '#1a1a2a');
+    if (st.s >= 1) txt('MILO AIS        x1', 26, 282, 18, '#1a1a2a');
+    if (on) txt('TEH TARIK       x1', 26, st.s >= 1 ? 300 : 282, 18, '#b0140c');
+    if (st.s >= 3 && st.sp > 0.8) { R(18, 306, 228, 18, '#b0140c'); txt('CHARGED TO: TUITION FEES', FW / 2, 305, 18, '#fff', 'center'); }
+  },
+  qr(st) {
+    const on = st.tw > 0, x0 = 38, y0 = 40, m = 9, paid = st.s >= 3 && st.sp > 0.9;
+    txt('SCAN TO PAY', 12, 8, 20, C.dim); txt('RM', FW - 12, 8, 20, C.amb, 'right');
+    R(x0 - 9, y0 - 9, 21 * m + 18, 21 * m + 18, C.paper);
+    const finder = (cx, cy, core) => { R(x0 + cx * m, y0 + cy * m, 7 * m, 7 * m, '#10122a'); R(x0 + (cx + 1) * m, y0 + (cy + 1) * m, 5 * m, 5 * m, C.paper); R(x0 + (cx + 2) * m, y0 + (cy + 2) * m, 3 * m, 3 * m, core || '#10122a'); };
+    const eye = on && st.tw > 0.8;
+    for (let j = 0; j < 21; j++) for (let i = 0; i < 21; i++) {
+      if ((i < 8 && j < 8) || (i > 12 && j < 8) || (i < 8 && j > 12)) continue;
+      if (eye && i > 5 && i < 15 && j > 5 && j < 15) continue;
+      if (hash(i * 31 + j, on ? 100 + (st.f >> 2) : 7) < 0.48) R(x0 + i * m, y0 + j * m, m, m, '#10122a');
+    }
+    finder(0, 0); finder(14, 0); finder(0, 14);
+    if (eye) {                                              // it looks back
+      const blink = hash(st.f >> 3, 17) < 0.12, px = Math.round(Math.sin(st.t * 1.7) * 1.2), py = Math.round(Math.cos(st.t * 1.1) * 0.8);
+      R(x0 + 6 * m, y0 + 6 * m, 9 * m, 9 * m, C.paper); R(x0 + 7 * m, y0 + 7 * m, 7 * m, 7 * m, '#10122a'); R(x0 + 8 * m, y0 + 8 * m, 5 * m, 5 * m, C.paper);
+      if (blink) R(x0 + 8 * m, y0 + 10 * m, 5 * m, m, '#10122a'); else R(x0 + (9 + px) * m, y0 + (9 + py) * m, 3 * m, 3 * m, '#b0140c');
+    }
+    if (on && !paid) {
+      const sy = (st.tw * 120) % FH;
+      R(0, sy, FW, 3, C.red); g.globalAlpha = 0.22; R(0, sy - 18, FW, 18, C.red); g.globalAlpha = 1;
+    }
+    if (paid) { txt('BAYARAN DITERIMA', FW / 2, 250, 26, C.red, 'center'); txt('PAYMENT RECEIVED', FW / 2, 278, 18, C.pale, 'center'); txt('TERIMA KASIH', FW / 2, 302, 18, C.pale, 'center'); }
+    else if (on) { if ((st.f >> 3) % 2) txt('SCANNING YOU', FW / 2, 256, 26, C.red, 'center'); txt('DO NOT MOVE', FW / 2, 290, 20, C.pale, 'center'); }
+    else { txt('FPX / JOMPAY / DUITNOW QR', FW / 2, 256, 18, C.ink, 'center'); txt('AMOUNT: RM ----.--', FW / 2, 282, 20, C.amb, 'center'); }
+  },
+  time(st) {
+    const on = st.tw > 0, mins = st.t * 2.2;
+    const clock = (cx, name, hour, extra, col) => {
+      disc(cx, 84, 46, '#0a0d30'); g.strokeStyle = col; g.lineWidth = 2; g.beginPath(); g.arc(cx, 84, 46, 0, 7); g.stroke();
+      for (let i = 0; i < 12; i++) { const a = i * Math.PI / 6; R(cx + Math.sin(a) * 40 - 1, 84 - Math.cos(a) * 40 - 1, 2, 2, col); }
+      const total = hour * 60 + mins + extra, ha = total / 720 * Math.PI * 2, ma = total / 60 * Math.PI * 2;
+      g.strokeStyle = col; g.lineWidth = 3; g.beginPath(); g.moveTo(cx, 84); g.lineTo(cx + Math.sin(ha) * 22, 84 - Math.cos(ha) * 22); g.stroke();
+      g.lineWidth = 1.5; g.beginPath(); g.moveTo(cx, 84); g.lineTo(cx + Math.sin(ma) * 36, 84 - Math.cos(ma) * 36); g.stroke();
+      txt(name, cx, 136, 16, col, 'center');
+    };
+    txt('YOU', 68, 6, 18, C.dim, 'center'); txt('THEM', 196, 6, 18, on ? C.red : C.dim, 'center');
+    clock(68, 'KUALA LUMPUR', 6, on ? -st.tw * 2.2 : 0, C.ink);                       // yours stops
+    clock(196, 'MELBOURNE', 9, on ? st.tw * st.tw * 90 : 0, on ? C.red : C.amb);       // theirs does not
+    txt(on ? 'AHEAD. ALWAYS.' : st.s >= 1 ? 'RESULT: DECIDED' : '3 HRS AHEAD', 196, 154, 16, on ? C.red : C.amb, 'center');
+    txt(st.s >= 1 ? 'RESULT: PENDING' : 'WAITING', 68, 154, 16, C.ink, 'center');
+    box(16, 184, 232, 132, on ? C.red : C.dim);
+    if (!on) { txt('TELEPHONE', 132, 190, 18, C.dim, 'center'); txt('NO CALL IN PROGRESS', 132, 240, 18, C.dim, 'center'); }
+    else {
+      const live = st.tw > 2.2;
+      txt(live ? 'CONNECTED: CLAYTON' : 'CALLING CLAYTON' + '.'.repeat(1 + (st.f >> 3) % 3), 132, 190, 18, C.pale, 'center');
+      if (live) {
+        txt('VOICE MATCH: YOU', 132, 212, 22, C.red, 'center');
+        g.strokeStyle = C.red; g.lineWidth = 1.5; g.beginPath();
+        for (let x = 0; x <= 208; x += 4) g.lineTo(28 + x, 264 + (hash(x, st.f >> 1) - 0.5) * 44 * Math.sin(x / 208 * Math.PI));
+        g.stroke();
+        txt('CALL TIME 49:49', 132, 292, 18, C.pale, 'center');
+      }
+    }
+  },
   mate(st) {
     const k = st.tw > 0 ? ease(st.tw / 2.6) : 0;
     g.fillStyle = '#3a4270'; g.beginPath(); g.moveTo(22, 330); g.quadraticCurveTo(30, 206, 132, 196); g.quadraticCurveTo(234, 206, 242, 330); g.fill();
@@ -345,19 +478,30 @@ const SCENE = {
     figure(seg, st, 'A');
   },
   rule(seg, t, f) {
-    const lt = t - seg.start, num = String(seg.num).padStart(2, '0');
+    const lt = t - seg.start, my = seg.group === 'M';
+    const of = T.segments.filter(x => x.type === 'rule' && x.group === seg.group).length;
+    const num = my ? 'M' + seg.num : String(seg.num).padStart(2, '0');
     if (lt < 1.0) {
       R(0, 0, W, H, '#000');
       txt('RULE ' + num, W / 2, 150, 120, C.amb, 'center');
       txt(seg.title, W / 2, 280, 34, C.fg, 'center');
+      if (my) txt('MALAYSIA CAMPUS ONLY', W / 2, 330, 22, C.dim, 'center');
       return;
     }
-    R(0, 0, W, H, C.bg); header('RULE ' + num + ' OF 10');
+    R(0, 0, W, H, my ? MYBG : C.bg); header(my ? 'MALAYSIA CAMPUS  ' + num + ' OF M' + of : 'RULE ' + num + ' OF ' + of);
     const st = state(seg, t, f);
     txt('RULE ' + num, 24, 60, 44, st.tw > 0 ? C.red : C.amb);
     txt(seg.title, 160, 76, 22, C.dim);
     sentences(seg, t, 24, 116, 306, 22, f);
-    figure(seg, st, seg.num);
+    figure(seg, st, num);
+  },
+  section(seg, t, f) {          // a different tape, spliced in
+    R(0, 0, W, H, MYBG);
+    const st = state(seg, t, f);
+    header('SUPPLEMENT');
+    txt(seg.title, 24, 62, 44, st.tw > 0 ? C.red : C.amb);
+    txt(seg.sub, 24, 108, 18, C.dim);
+    sentences(seg, t, 60, 156, 520, 26, f);
   },
   outro(seg, t, f) {
     R(0, 0, W, H, C.bg);
